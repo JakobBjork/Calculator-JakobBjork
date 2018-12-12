@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: calculator_jakobbjork.calculator_jakobbjork.TestCalculator
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.473 sec - in calculator_jakobbjork.calculator_jakobbjork.TestCalculator
