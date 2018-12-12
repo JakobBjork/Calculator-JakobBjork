@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+calculator-jakobbjork,calculator_jakobbjork.calculator_jakobbjork,BasicCalculator,172,1480,42,0,56,270,25,21,4,21
+calculator-jakobbjork,calculator_jakobbjork.calculator_jakobbjork,AdvancedCalculator,177,1856,52,2,61,338,29,28,3,27
+calculator-jakobbjork,calculator_jakobbjork.calculator_jakobbjork,Main,8,0,0,0,3,0,2,0,2,0

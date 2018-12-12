@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BasicCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator-jakobbjork</a> &gt; <a href="index.source.html" class="el_package">calculator_jakobbjork.calculator_jakobbjork</a> &gt; <span class="el_source">BasicCalculator.java</span></div><h1>BasicCalculator.java</h1><pre class="source lang-java linenums">package calculator_jakobbjork.calculator_jakobbjork;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import javax.swing.*;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Color;
+import java.awt.Font;
+
+public class BasicCalculator implements ActionListener, CalculatorBasicOperationsInterface{
+	JFrame basicCalc;
+	private JButton button2;
+	private JButton button3;
+	private JButton button1;
+	private JButton button4;
+	private JButton button5;
+	private JButton button6;
+	private JButton button7;
+	private JButton button8;
+	private JButton button9;
+	private JButton button0;
+	private JTextField textField;
+	private JButton buttonClear;
+	private JButton buttonAdd;
+	private JButton buttonSub;
+	private JButton buttonMult;
+	private JButton buttonDiv;
+	private JButton buttonEqual;
+	private JButton buttonLeftPar;
+	private JButton buttonRightPar;
+	private JButton buttonDecimal;
+	private JButton buttonAdv;
+	private JButton buttonSquared;
+	double calcResult;
+	
+	
+<span class="fc" id="L42">	public BasicCalculator(){ //The frame and layout for the calculator</span>
+<span class="fc" id="L43">		basicCalc = new JFrame();</span>
+<span class="fc" id="L44">		basicCalc.setTitle(&quot;Basic Calculator&quot;);</span>
+<span class="fc" id="L45">		basicCalc.setSize(600, 400);</span>
+<span class="fc" id="L46">		GridBagLayout gridBagLayout = new GridBagLayout();</span>
+<span class="fc" id="L47">		gridBagLayout.columnWidths = new int[]{116, 116, 116, 116, 116, 0};</span>
+<span class="fc" id="L48">		gridBagLayout.rowHeights = new int[]{70, 70, 70, 70, 70, 0};</span>
+<span class="fc" id="L49">		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};</span>
+<span class="fc" id="L50">		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};</span>
+<span class="fc" id="L51">		basicCalc.getContentPane().setLayout(gridBagLayout);</span>
+		
+<span class="fc" id="L53">		buttonAdv = new JButton(&quot;Adv&quot;);</span>
+<span class="fc" id="L54">		GridBagConstraints gbc_buttonAdv = new GridBagConstraints();</span>
+<span class="fc" id="L55">		gbc_buttonAdv.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L56">		gbc_buttonAdv.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L57">		gbc_buttonAdv.gridx = 0;</span>
+<span class="fc" id="L58">		gbc_buttonAdv.gridy = 0;</span>
+<span class="fc" id="L59">		basicCalc.getContentPane().add(buttonAdv, gbc_buttonAdv);</span>
+<span class="fc" id="L60">		buttonAdv.addActionListener(this);</span>
+		
+<span class="fc" id="L62">		textField = new JTextField();</span>
+<span class="fc" id="L63">		textField.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 22));</span>
+<span class="fc" id="L64">		GridBagConstraints gbc_textField = new GridBagConstraints();</span>
+<span class="fc" id="L65">		gbc_textField.gridwidth = 4;</span>
+<span class="fc" id="L66">		gbc_textField.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L67">		gbc_textField.insets = new Insets(0, 0, 5, 0);</span>
+<span class="fc" id="L68">		gbc_textField.gridx = 1;</span>
+<span class="fc" id="L69">		gbc_textField.gridy = 0;</span>
+<span class="fc" id="L70">		basicCalc.getContentPane().add(textField, gbc_textField);</span>
+<span class="fc" id="L71">		textField.setColumns(30);</span>
+		
+<span class="fc" id="L73">		button1 = new JButton(&quot;1&quot;);</span>
+<span class="fc" id="L74">		button1.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L75">		button1.setForeground(Color.BLACK);</span>
+<span class="fc" id="L76">		GridBagConstraints gbc_button1 = new GridBagConstraints();</span>
+<span class="fc" id="L77">		gbc_button1.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L78">		gbc_button1.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L79">		gbc_button1.gridx = 0;</span>
+<span class="fc" id="L80">		gbc_button1.gridy = 1;</span>
+<span class="fc" id="L81">		basicCalc.getContentPane().add(button1, gbc_button1);</span>
+<span class="fc" id="L82">		button1.addActionListener(this);</span>
+		
+<span class="fc" id="L84">		button2 = new JButton(&quot;2&quot;);</span>
+<span class="fc" id="L85">		button2.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L86">		GridBagConstraints gbc_button2 = new GridBagConstraints();</span>
+<span class="fc" id="L87">		gbc_button2.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L88">		gbc_button2.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L89">		gbc_button2.gridx = 1;</span>
+<span class="fc" id="L90">		gbc_button2.gridy = 1;</span>
+<span class="fc" id="L91">		basicCalc.getContentPane().add(button2, gbc_button2);</span>
+<span class="fc" id="L92">		button2.addActionListener(this);</span>
+		
+<span class="fc" id="L94">		button3 = new JButton(&quot;3&quot;);</span>
+<span class="fc" id="L95">		button3.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L96">		GridBagConstraints gbc_button3 = new GridBagConstraints();</span>
+<span class="fc" id="L97">		gbc_button3.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L98">		gbc_button3.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L99">		gbc_button3.gridx = 2;</span>
+<span class="fc" id="L100">		gbc_button3.gridy = 1;</span>
+<span class="fc" id="L101">		basicCalc.getContentPane().add(button3, gbc_button3);</span>
+<span class="fc" id="L102">		button3.addActionListener(this);</span>
+		
+<span class="fc" id="L104">		buttonAdd = new JButton(&quot;+&quot;);</span>
+<span class="fc" id="L105">		buttonAdd.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L106">		GridBagConstraints gbc_buttonAdd = new GridBagConstraints();</span>
+<span class="fc" id="L107">		gbc_buttonAdd.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L108">		gbc_buttonAdd.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L109">		gbc_buttonAdd.gridx = 3;</span>
+<span class="fc" id="L110">		gbc_buttonAdd.gridy = 1;</span>
+<span class="fc" id="L111">		basicCalc.getContentPane().add(buttonAdd, gbc_buttonAdd);</span>
+<span class="fc" id="L112">		buttonAdd.addActionListener(this);</span>
+		
+<span class="fc" id="L114">		buttonClear = new JButton(&quot;C&quot;);</span>
+<span class="fc" id="L115">		GridBagConstraints gbc_buttonClear = new GridBagConstraints();</span>
+<span class="fc" id="L116">		gbc_buttonClear.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L117">		gbc_buttonClear.insets = new Insets(0, 0, 5, 0);</span>
+<span class="fc" id="L118">		gbc_buttonClear.gridx = 4;</span>
+<span class="fc" id="L119">		gbc_buttonClear.gridy = 1;</span>
+<span class="fc" id="L120">		basicCalc.getContentPane().add(buttonClear, gbc_buttonClear);</span>
+<span class="fc" id="L121">		buttonClear.addActionListener(this);</span>
+		
+<span class="fc" id="L123">		button4 = new JButton(&quot;4&quot;);</span>
+<span class="fc" id="L124">		button4.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L125">		GridBagConstraints gbc_button4 = new GridBagConstraints();</span>
+<span class="fc" id="L126">		gbc_button4.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L127">		gbc_button4.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L128">		gbc_button4.gridx = 0;</span>
+<span class="fc" id="L129">		gbc_button4.gridy = 2;</span>
+<span class="fc" id="L130">		basicCalc.getContentPane().add(button4, gbc_button4);</span>
+<span class="fc" id="L131">		button4.addActionListener(this);</span>
+		
+<span class="fc" id="L133">		button5 = new JButton(&quot;5&quot;);</span>
+<span class="fc" id="L134">		button5.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L135">		GridBagConstraints gbc_button5 = new GridBagConstraints();</span>
+<span class="fc" id="L136">		gbc_button5.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L137">		gbc_button5.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L138">		gbc_button5.gridx = 1;</span>
+<span class="fc" id="L139">		gbc_button5.gridy = 2;</span>
+<span class="fc" id="L140">		basicCalc.getContentPane().add(button5, gbc_button5);</span>
+<span class="fc" id="L141">		button5.addActionListener(this);</span>
+		
+<span class="fc" id="L143">		button6 = new JButton(&quot;6&quot;);</span>
+<span class="fc" id="L144">		button6.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L145">		GridBagConstraints gbc_button6 = new GridBagConstraints();</span>
+<span class="fc" id="L146">		gbc_button6.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L147">		gbc_button6.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L148">		gbc_button6.gridx = 2;</span>
+<span class="fc" id="L149">		gbc_button6.gridy = 2;</span>
+<span class="fc" id="L150">		basicCalc.getContentPane().add(button6, gbc_button6);</span>
+<span class="fc" id="L151">		button6.addActionListener(this);</span>
+		
+<span class="fc" id="L153">		buttonSub = new JButton(&quot;-&quot;);</span>
+<span class="fc" id="L154">		buttonSub.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L155">		GridBagConstraints gbc_buttonSub = new GridBagConstraints();</span>
+<span class="fc" id="L156">		gbc_buttonSub.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L157">		gbc_buttonSub.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L158">		gbc_buttonSub.gridx = 3;</span>
+<span class="fc" id="L159">		gbc_buttonSub.gridy = 2;</span>
+<span class="fc" id="L160">		basicCalc.getContentPane().add(buttonSub, gbc_buttonSub);</span>
+<span class="fc" id="L161">		buttonSub.addActionListener(this);</span>
+		
+<span class="fc" id="L163">		buttonLeftPar = new JButton(&quot;(&quot;);</span>
+<span class="fc" id="L164">		GridBagConstraints gbc_buttonLeftPar = new GridBagConstraints();</span>
+<span class="fc" id="L165">		gbc_buttonLeftPar.insets = new Insets(0, 0, 5, 0);</span>
+<span class="fc" id="L166">		gbc_buttonLeftPar.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L167">		gbc_buttonLeftPar.gridx = 4;</span>
+<span class="fc" id="L168">		gbc_buttonLeftPar.gridy = 2;</span>
+<span class="fc" id="L169">		basicCalc.getContentPane().add(buttonLeftPar, gbc_buttonLeftPar);</span>
+<span class="fc" id="L170">		buttonLeftPar.addActionListener(this);</span>
+		
+<span class="fc" id="L172">		button7 = new JButton(&quot;7&quot;);</span>
+<span class="fc" id="L173">		button7.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L174">		GridBagConstraints gbc_button7 = new GridBagConstraints();</span>
+<span class="fc" id="L175">		gbc_button7.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L176">		gbc_button7.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L177">		gbc_button7.gridx = 0;</span>
+<span class="fc" id="L178">		gbc_button7.gridy = 3;</span>
+<span class="fc" id="L179">		basicCalc.getContentPane().add(button7, gbc_button7);</span>
+<span class="fc" id="L180">		button7.addActionListener(this);</span>
+		
+<span class="fc" id="L182">		button8 = new JButton(&quot;8&quot;);</span>
+<span class="fc" id="L183">		button8.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L184">		GridBagConstraints gbc_button8 = new GridBagConstraints();</span>
+<span class="fc" id="L185">		gbc_button8.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L186">		gbc_button8.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L187">		gbc_button8.gridx = 1;</span>
+<span class="fc" id="L188">		gbc_button8.gridy = 3;</span>
+<span class="fc" id="L189">		basicCalc.getContentPane().add(button8, gbc_button8);</span>
+<span class="fc" id="L190">		button8.addActionListener(this);</span>
+		
+<span class="fc" id="L192">		button9 = new JButton(&quot;9&quot;);</span>
+<span class="fc" id="L193">		button9.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L194">		GridBagConstraints gbc_button9 = new GridBagConstraints();</span>
+<span class="fc" id="L195">		gbc_button9.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L196">		gbc_button9.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L197">		gbc_button9.gridx = 2;</span>
+<span class="fc" id="L198">		gbc_button9.gridy = 3;</span>
+<span class="fc" id="L199">		basicCalc.getContentPane().add(button9, gbc_button9);</span>
+<span class="fc" id="L200">		button9.addActionListener(this);</span>
+		
+<span class="fc" id="L202">		buttonMult = new JButton(&quot;*&quot;);</span>
+<span class="fc" id="L203">		buttonMult.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L204">		GridBagConstraints gbc_buttonMult = new GridBagConstraints();</span>
+<span class="fc" id="L205">		gbc_buttonMult.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L206">		gbc_buttonMult.insets = new Insets(0, 0, 5, 5);</span>
+<span class="fc" id="L207">		gbc_buttonMult.gridx = 3;</span>
+<span class="fc" id="L208">		gbc_buttonMult.gridy = 3;</span>
+<span class="fc" id="L209">		basicCalc.getContentPane().add(buttonMult, gbc_buttonMult);</span>
+<span class="fc" id="L210">		buttonMult.addActionListener(this);</span>
+		
+<span class="fc" id="L212">		buttonRightPar = new JButton(&quot;)&quot;);</span>
+<span class="fc" id="L213">		GridBagConstraints gbc_buttonRightPar = new GridBagConstraints();</span>
+<span class="fc" id="L214">		gbc_buttonRightPar.insets = new Insets(0, 0, 5, 0);</span>
+<span class="fc" id="L215">		gbc_buttonRightPar.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L216">		gbc_buttonRightPar.gridx = 4;</span>
+<span class="fc" id="L217">		gbc_buttonRightPar.gridy = 3;</span>
+<span class="fc" id="L218">		basicCalc.getContentPane().add(buttonRightPar, gbc_buttonRightPar);</span>
+<span class="fc" id="L219">		buttonRightPar.addActionListener(this);</span>
+		
+<span class="fc" id="L221">		button0 = new JButton(&quot;0&quot;);</span>
+<span class="fc" id="L222">		button0.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L223">		GridBagConstraints gbc_button0 = new GridBagConstraints();</span>
+<span class="fc" id="L224">		gbc_button0.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L225">		gbc_button0.insets = new Insets(0, 0, 0, 5);</span>
+<span class="fc" id="L226">		gbc_button0.gridx = 0;</span>
+<span class="fc" id="L227">		gbc_button0.gridy = 4;</span>
+<span class="fc" id="L228">		basicCalc.getContentPane().add(button0, gbc_button0);</span>
+<span class="fc" id="L229">		button0.addActionListener(this);</span>
+		
+<span class="fc" id="L231">		buttonDecimal = new JButton(&quot;.&quot;);</span>
+<span class="fc" id="L232">		buttonDecimal.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L233">		GridBagConstraints gbc_buttonDecimal = new GridBagConstraints();</span>
+<span class="fc" id="L234">		gbc_buttonDecimal.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L235">		gbc_buttonDecimal.insets = new Insets(0, 0, 0, 5);</span>
+<span class="fc" id="L236">		gbc_buttonDecimal.gridx = 1;</span>
+<span class="fc" id="L237">		gbc_buttonDecimal.gridy = 4;</span>
+<span class="fc" id="L238">		basicCalc.getContentPane().add(buttonDecimal, gbc_buttonDecimal);</span>
+<span class="fc" id="L239">		buttonDecimal.addActionListener(this);</span>
+		
+<span class="fc" id="L241">		buttonEqual = new JButton(&quot;=&quot;);</span>
+<span class="fc" id="L242">		buttonEqual.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L243">		GridBagConstraints gbc_buttonEqual = new GridBagConstraints();</span>
+<span class="fc" id="L244">		gbc_buttonEqual.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L245">		gbc_buttonEqual.insets = new Insets(0, 0, 0, 5);</span>
+<span class="fc" id="L246">		gbc_buttonEqual.gridx = 2;</span>
+<span class="fc" id="L247">		gbc_buttonEqual.gridy = 4;</span>
+<span class="fc" id="L248">		basicCalc.getContentPane().add(buttonEqual, gbc_buttonEqual);</span>
+<span class="fc" id="L249">		buttonEqual.addActionListener(this);</span>
+		
+<span class="fc" id="L251">		buttonDiv = new JButton(&quot;/&quot;);</span>
+<span class="fc" id="L252">		buttonDiv.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 16));</span>
+<span class="fc" id="L253">		GridBagConstraints gbc_buttonDiv = new GridBagConstraints();</span>
+<span class="fc" id="L254">		gbc_buttonDiv.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L255">		gbc_buttonDiv.insets = new Insets(0, 0, 0, 5);</span>
+<span class="fc" id="L256">		gbc_buttonDiv.gridx = 3;</span>
+<span class="fc" id="L257">		gbc_buttonDiv.gridy = 4;</span>
+<span class="fc" id="L258">		basicCalc.getContentPane().add(buttonDiv, gbc_buttonDiv);</span>
+<span class="fc" id="L259">		buttonDiv.addActionListener(this);</span>
+		
+<span class="fc" id="L261">		buttonSquared = new JButton(&quot;X^2&quot;);</span>
+<span class="fc" id="L262">		GridBagConstraints gbc_buttonSquared = new GridBagConstraints();</span>
+<span class="fc" id="L263">		gbc_buttonSquared.fill = GridBagConstraints.BOTH;</span>
+<span class="fc" id="L264">		gbc_buttonSquared.gridx = 4;</span>
+<span class="fc" id="L265">		gbc_buttonSquared.gridy = 4;</span>
+<span class="fc" id="L266">		basicCalc.getContentPane().add(buttonSquared, gbc_buttonSquared);</span>
+<span class="fc" id="L267">		buttonSquared.addActionListener(this);</span>
+<span class="fc" id="L268">		basicCalc.setVisible(true);</span>
+<span class="fc" id="L269">		basicCalc.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+		
+		
+		
+<span class="fc" id="L273">	}</span>
+	
+	public void oneButton(){ //Prints &quot;1&quot; to the textfield
+<span class="fc" id="L276">		String displayText = textField.getText();</span>
+<span class="fc" id="L277">		textField.setText(displayText + &quot;1&quot;);</span>
+<span class="fc" id="L278">	}</span>
+
+	public void twoButton(){ //Prints &quot;2&quot; to the textfield
+<span class="fc" id="L281">		String displayText = textField.getText();</span>
+<span class="fc" id="L282">		textField.setText(displayText + &quot;2&quot;);</span>
+<span class="fc" id="L283">	}</span>
+
+	public void threeButton(){ //Prints &quot;3&quot; to the textfield
+<span class="fc" id="L286">		String displayText = textField.getText();</span>
+<span class="fc" id="L287">		textField.setText(displayText + &quot;3&quot;);</span>
+<span class="fc" id="L288">	}</span>
+
+	public void fourButton(){ //Prints &quot;4&quot; to the textfield
+<span class="fc" id="L291">		String displayText = textField.getText();</span>
+<span class="fc" id="L292">		textField.setText(displayText + &quot;4&quot;);</span>
+<span class="fc" id="L293">	}</span>
+
+	public void fiveButton(){ //Prints &quot;5&quot; to the textfield
+<span class="fc" id="L296">		String displayText = textField.getText();</span>
+<span class="fc" id="L297">		textField.setText(displayText + &quot;5&quot;);</span>
+<span class="fc" id="L298">	}</span>
+
+	public void sixButton(){ //Prints &quot;6&quot; to the textfield
+<span class="fc" id="L301">		String displayText = textField.getText();</span>
+<span class="fc" id="L302">		textField.setText(displayText + &quot;6&quot;);</span>
+<span class="fc" id="L303">	}</span>
+
+	public void sevenButton(){ //Prints &quot;7&quot; to the textfield
+<span class="fc" id="L306">		String displayText = textField.getText();</span>
+<span class="fc" id="L307">		textField.setText(displayText + &quot;7&quot;);</span>
+<span class="fc" id="L308">	}</span>
+
+	public void eightButton(){ //Prints &quot;8&quot; to the textfield
+<span class="fc" id="L311">		String displayText = textField.getText();</span>
+<span class="fc" id="L312">		textField.setText(displayText + &quot;8&quot;);</span>
+<span class="fc" id="L313">	}</span>
+
+	public void nineButton(){ //Prints &quot;9&quot; to the textfield
+<span class="fc" id="L316">		String displayText = textField.getText();</span>
+<span class="fc" id="L317">		textField.setText(displayText + &quot;9&quot;);</span>
+<span class="fc" id="L318">	}</span>
+
+	public void zeroButton(){ //Prints &quot;0&quot; to the textfield
+<span class="fc" id="L321">		String displayText = textField.getText();</span>
+<span class="fc" id="L322">		textField.setText(displayText + &quot;0&quot;);</span>
+<span class="fc" id="L323">	}</span>
+
+	public void decimalButton(){ //Prints &quot;.&quot; to the textfield for a decimal
+<span class="fc" id="L326">		String displayText = textField.getText();</span>
+<span class="fc" id="L327">		textField.setText(displayText + &quot;.&quot;);</span>
+<span class="fc" id="L328">	}</span>
+	
+	public void addition(){ //Prints &quot;+&quot; to the textfield for addition
+<span class="fc" id="L331">		String displayText = textField.getText();</span>
+<span class="fc" id="L332">		textField.setText(displayText + &quot;+&quot;);</span>
+<span class="fc" id="L333">	}</span>
+	
+	public void subtraction(){ //Prints &quot;-&quot; to the textfield for subtraction
+<span class="fc" id="L336">		String displayText = textField.getText();</span>
+<span class="fc" id="L337">		textField.setText(displayText + &quot;-&quot;);</span>
+<span class="fc" id="L338">	}</span>
+
+	public void multiplication(){ //Prints &quot;*&quot; to the textfield for multiplication
+<span class="fc" id="L341">		String displayText = textField.getText();</span>
+<span class="fc" id="L342">		textField.setText(displayText + &quot;*&quot;);</span>
+<span class="fc" id="L343">	}</span>
+
+	public void division(){ //Prints &quot;/&quot; to the textfield for division
+<span class="fc" id="L346">		String displayText = textField.getText();</span>
+<span class="fc" id="L347">		textField.setText(displayText + &quot;/&quot;);</span>
+<span class="fc" id="L348">	}</span>
+
+	public void advancedButton(){ //Closes the current calculator and opens the advanced calculator in its stead
+<span class="nc" id="L351">		new AdvancedCalculator();</span>
+<span class="nc" id="L352">		basicCalc.dispose();</span>
+<span class="nc" id="L353">	}</span>
+
+	public void clearButton(){ //Clears the textfield
+<span class="fc" id="L356">		textField.setText(&quot;&quot;);</span>
+<span class="fc" id="L357">	}</span>
+
+	public void paranthesisLeft(){ //Prints &quot;(&quot; to the textfield for enclosing
+<span class="fc" id="L360">		String displayText = textField.getText();</span>
+<span class="fc" id="L361">		textField.setText(displayText + &quot;(&quot;);</span>
+<span class="fc" id="L362">	}</span>
+
+	public void paranthesisRight(){ //Prints &quot;)&quot; to the textfield for enclosing
+<span class="fc" id="L365">		String displayText = textField.getText();</span>
+<span class="fc" id="L366">		textField.setText(displayText + &quot;)&quot;);</span>
+<span class="fc" id="L367">	}</span>
+
+	public void xSquared(){ //Squares the value of the textfield and replaces it with the result
+<span class="nc" id="L370">		String displayText = textField.getText();</span>
+<span class="nc" id="L371">		double toSquare = Double.valueOf(displayText);</span>
+<span class="nc" id="L372">		double squared = toSquare * toSquare;</span>
+<span class="nc" id="L373">        textField.setText(&quot;&quot;+Double.valueOf(squared));</span>
+<span class="nc" id="L374">	}</span>
+
+	public void equals(){ //Calculates the value of the textfield
+<span class="fc" id="L377">		String displayText = textField.getText();</span>
+<span class="fc" id="L378">		ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(&quot;js&quot;);</span>
+		 
+        try {
+            // Evaluate the expression
+<span class="fc" id="L382">            Object result = engine.eval(displayText);</span>
+<span class="fc" id="L383">            String resultString = result.toString();</span>
+<span class="fc" id="L384">            calcResult = Double.parseDouble(resultString);</span>
+ 
+<span class="fc" id="L386">            System.out.println(displayText + &quot; = &quot; + result);</span>
+<span class="fc" id="L387">            textField.setText(&quot;&quot;+result);</span>
+        }
+<span class="nc" id="L389">        catch (ScriptException f) {</span>
+            // Something went wrong
+<span class="nc" id="L391">            f.printStackTrace();</span>
+<span class="fc" id="L392">        }</span>
+<span class="fc" id="L393">	}</span>
+	
+	public double getCalcResult(){
+<span class="fc" id="L396">		return calcResult;</span>
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L400">		JButton pressed = (JButton) e.getSource();</span>
+<span class="nc bnc" id="L401" title="All 2 branches missed.">		if (pressed == buttonAdv)</span>
+        {
+<span class="nc" id="L403">			advancedButton();</span>
+        }
+<span class="nc bnc" id="L405" title="All 2 branches missed.">		if (pressed == button1)</span>
+        {
+<span class="nc" id="L407">            oneButton();</span>
+            
+        }
+<span class="nc bnc" id="L410" title="All 2 branches missed.">		if (pressed == button2)</span>
+        {
+<span class="nc" id="L412">            twoButton();</span>
+            
+        }
+<span class="nc bnc" id="L415" title="All 2 branches missed.">		if (pressed == button3)</span>
+        {
+<span class="nc" id="L417">            threeButton();</span>
+            
+        }
+<span class="nc bnc" id="L420" title="All 2 branches missed.">		if (pressed == button4)</span>
+        {
+<span class="nc" id="L422">            fourButton();</span>
+            
+        }
+<span class="nc bnc" id="L425" title="All 2 branches missed.">		if (pressed == button5)</span>
+        {
+<span class="nc" id="L427">            fiveButton();</span>
+            
+        }
+<span class="nc bnc" id="L430" title="All 2 branches missed.">		if (pressed == button6)</span>
+        {
+<span class="nc" id="L432">            sixButton();</span>
+            
+        }
+<span class="nc bnc" id="L435" title="All 2 branches missed.">		if (pressed == button7)</span>
+        {
+<span class="nc" id="L437">            sevenButton();</span>
+            
+        }
+<span class="nc bnc" id="L440" title="All 2 branches missed.">		if (pressed == button8)</span>
+        {
+<span class="nc" id="L442">            eightButton();</span>
+            
+        }
+<span class="nc bnc" id="L445" title="All 2 branches missed.">		if (pressed == button9)</span>
+        {
+<span class="nc" id="L447">            nineButton();</span>
+            
+        }
+<span class="nc bnc" id="L450" title="All 2 branches missed.">		if (pressed == button0)</span>
+        {
+<span class="nc" id="L452">            zeroButton();</span>
+            
+        }
+<span class="nc bnc" id="L455" title="All 2 branches missed.">		if (pressed == buttonAdd)</span>
+        {
+<span class="nc" id="L457">            addition();</span>
+            
+        }
+<span class="nc bnc" id="L460" title="All 2 branches missed.">		if (pressed == buttonSub)</span>
+        {
+<span class="nc" id="L462">            subtraction();</span>
+            
+        }
+<span class="nc bnc" id="L465" title="All 2 branches missed.">		if (pressed == buttonMult)</span>
+        {
+<span class="nc" id="L467">            multiplication();</span>
+            
+        }
+<span class="nc bnc" id="L470" title="All 2 branches missed.">		if (pressed == buttonDiv)</span>
+        {
+<span class="nc" id="L472">            division();</span>
+            
+        }
+<span class="nc bnc" id="L475" title="All 2 branches missed.">		if (pressed == buttonLeftPar)</span>
+        {
+<span class="nc" id="L477">            paranthesisLeft();</span>
+            
+        }
+<span class="nc bnc" id="L480" title="All 2 branches missed.">		if (pressed == buttonRightPar)</span>
+        {
+<span class="nc" id="L482">            paranthesisRight();</span>
+            
+        }
+<span class="nc bnc" id="L485" title="All 2 branches missed.">		if (pressed == buttonDecimal)</span>
+        {
+<span class="nc" id="L487">            decimalButton();</span>
+            
+        }
+<span class="nc bnc" id="L490" title="All 2 branches missed.">		if (pressed == buttonSquared)</span>
+        {
+<span class="nc" id="L492">			xSquared();</span>
+            
+        }
+<span class="nc bnc" id="L495" title="All 2 branches missed.">		if (pressed == buttonClear)</span>
+        {
+<span class="nc" id="L497">            clearButton();</span>
+            
+        }
+<span class="nc bnc" id="L500" title="All 2 branches missed.">		if (pressed == buttonEqual)</span>
+        {
+<span class="nc" id="L502">			equals();</span>
+        }
+		
+<span class="nc" id="L505">	}</span>
+	public static void main(String[] args) {
+<span class="nc" id="L507">		new BasicCalculator();</span>
+
+<span class="nc" id="L509">	}</span>
+
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

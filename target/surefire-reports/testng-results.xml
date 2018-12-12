@@ -2,60 +2,60 @@
 <testng-results skipped="0" failed="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="13857" started-at="2018-12-12T13:16:23Z" finished-at="2018-12-12T13:16:37Z">
+  <suite name="Surefire suite" duration-ms="15302" started-at="2018-12-12T14:07:40Z" finished-at="2018-12-12T14:07:55Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="13857" started-at="2018-12-12T13:16:23Z" finished-at="2018-12-12T13:16:37Z">
+    <test name="Surefire test" duration-ms="15302" started-at="2018-12-12T14:07:40Z" finished-at="2018-12-12T14:07:55Z">
       <class name="calculator_jakobbjork.calculator_jakobbjork.TestCalculator">
-        <test-method status="PASS" signature="test11BasicDecimals()[pri:0, instance:test11BasicDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test11BasicDecimals" duration-ms="3550" started-at="2018-12-12T14:16:23Z" finished-at="2018-12-12T14:16:26Z">
+        <test-method status="PASS" signature="test11BasicDecimals()[pri:0, instance:test11BasicDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test11BasicDecimals" duration-ms="3464" started-at="2018-12-12T15:07:40Z" finished-at="2018-12-12T15:07:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test11BasicDecimals -->
-        <test-method status="PASS" signature="test10AdvancedInputZero()[pri:0, instance:test10AdvancedInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test10AdvancedInputZero" duration-ms="1051" started-at="2018-12-12T14:16:26Z" finished-at="2018-12-12T14:16:27Z">
+        <test-method status="PASS" signature="test10AdvancedInputZero()[pri:0, instance:test10AdvancedInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test10AdvancedInputZero" duration-ms="1303" started-at="2018-12-12T15:07:43Z" finished-at="2018-12-12T15:07:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test10AdvancedInputZero -->
-        <test-method status="PASS" signature="test9BasicInputZero()[pri:0, instance:test9BasicInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test9BasicInputZero" duration-ms="988" started-at="2018-12-12T14:16:27Z" finished-at="2018-12-12T14:16:28Z">
+        <test-method status="PASS" signature="test9BasicInputZero()[pri:0, instance:test9BasicInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test9BasicInputZero" duration-ms="879" started-at="2018-12-12T15:07:45Z" finished-at="2018-12-12T15:07:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test9BasicInputZero -->
-        <test-method status="PASS" signature="test7AdvancedAllNegative()[pri:0, instance:test7AdvancedAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test7AdvancedAllNegative" duration-ms="1097" started-at="2018-12-12T14:16:28Z" finished-at="2018-12-12T14:16:29Z">
+        <test-method status="PASS" signature="test7AdvancedAllNegative()[pri:0, instance:test7AdvancedAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test7AdvancedAllNegative" duration-ms="1183" started-at="2018-12-12T15:07:45Z" finished-at="2018-12-12T15:07:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test7AdvancedAllNegative -->
-        <test-method status="PASS" signature="test3BasicAllNegative()[pri:0, instance:test3BasicAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test3BasicAllNegative" duration-ms="799" started-at="2018-12-12T14:16:29Z" finished-at="2018-12-12T14:16:30Z">
+        <test-method status="PASS" signature="test3BasicAllNegative()[pri:0, instance:test3BasicAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test3BasicAllNegative" duration-ms="1048" started-at="2018-12-12T15:07:47Z" finished-at="2018-12-12T15:07:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3BasicAllNegative -->
-        <test-method status="PASS" signature="test12AdvancedDecimals()[pri:0, instance:test12AdvancedDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test12AdvancedDecimals" duration-ms="684" started-at="2018-12-12T14:16:30Z" finished-at="2018-12-12T14:16:31Z">
+        <test-method status="PASS" signature="test12AdvancedDecimals()[pri:0, instance:test12AdvancedDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test12AdvancedDecimals" duration-ms="735" started-at="2018-12-12T15:07:48Z" finished-at="2018-12-12T15:07:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test12AdvancedDecimals -->
-        <test-method status="PASS" signature="test0BasicAllPositive()[pri:0, instance:test0BasicAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test0BasicAllPositive" duration-ms="771" started-at="2018-12-12T14:16:31Z" finished-at="2018-12-12T14:16:32Z">
+        <test-method status="PASS" signature="test0BasicAllPositive()[pri:0, instance:test0BasicAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test0BasicAllPositive" duration-ms="848" started-at="2018-12-12T15:07:48Z" finished-at="2018-12-12T15:07:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test0BasicAllPositive -->
-        <test-method status="PASS" signature="test8AdvancedAdvFunctions()[pri:0, instance:test8AdvancedAdvFunctions(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test8AdvancedAdvFunctions" duration-ms="1284" started-at="2018-12-12T14:16:32Z" finished-at="2018-12-12T14:16:33Z">
+        <test-method status="PASS" signature="test8AdvancedAdvFunctions()[pri:0, instance:test8AdvancedAdvFunctions(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test8AdvancedAdvFunctions" duration-ms="1396" started-at="2018-12-12T15:07:49Z" finished-at="2018-12-12T15:07:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test8AdvancedAdvFunctions -->
-        <test-method status="PASS" signature="test2BasicSecondNegative()[pri:0, instance:test2BasicSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test2BasicSecondNegative" duration-ms="681" started-at="2018-12-12T14:16:33Z" finished-at="2018-12-12T14:16:34Z">
+        <test-method status="PASS" signature="test2BasicSecondNegative()[pri:0, instance:test2BasicSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test2BasicSecondNegative" duration-ms="984" started-at="2018-12-12T15:07:51Z" finished-at="2018-12-12T15:07:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2BasicSecondNegative -->
-        <test-method status="PASS" signature="test4AdvancedAllPositive()[pri:0, instance:test4AdvancedAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test4AdvancedAllPositive" duration-ms="743" started-at="2018-12-12T14:16:34Z" finished-at="2018-12-12T14:16:34Z">
+        <test-method status="PASS" signature="test4AdvancedAllPositive()[pri:0, instance:test4AdvancedAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test4AdvancedAllPositive" duration-ms="835" started-at="2018-12-12T15:07:52Z" finished-at="2018-12-12T15:07:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test4AdvancedAllPositive -->
-        <test-method status="PASS" signature="test5AdvancedFirstNegative()[pri:0, instance:test5AdvancedFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test5AdvancedFirstNegative" duration-ms="842" started-at="2018-12-12T14:16:34Z" finished-at="2018-12-12T14:16:35Z">
+        <test-method status="PASS" signature="test5AdvancedFirstNegative()[pri:0, instance:test5AdvancedFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test5AdvancedFirstNegative" duration-ms="897" started-at="2018-12-12T15:07:52Z" finished-at="2018-12-12T15:07:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test5AdvancedFirstNegative -->
-        <test-method status="PASS" signature="test1BasicFirstNegative()[pri:0, instance:test1BasicFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test1BasicFirstNegative" duration-ms="678" started-at="2018-12-12T14:16:35Z" finished-at="2018-12-12T14:16:36Z">
+        <test-method status="PASS" signature="test1BasicFirstNegative()[pri:0, instance:test1BasicFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test1BasicFirstNegative" duration-ms="667" started-at="2018-12-12T15:07:53Z" finished-at="2018-12-12T15:07:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1BasicFirstNegative -->
-        <test-method status="PASS" signature="test6AdvancedSecondNegative()[pri:0, instance:test6AdvancedSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test6AdvancedSecondNegative" duration-ms="579" started-at="2018-12-12T14:16:36Z" finished-at="2018-12-12T14:16:36Z">
+        <test-method status="PASS" signature="test6AdvancedSecondNegative()[pri:0, instance:test6AdvancedSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)]" name="test6AdvancedSecondNegative" duration-ms="915" started-at="2018-12-12T15:07:54Z" finished-at="2018-12-12T15:07:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test6AdvancedSecondNegative -->

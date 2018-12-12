@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="13.743" tests="13" errors="0" skipped="0" failures="0">
+<testsuite name="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="15.162" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -24,7 +24,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/jakobb/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf2367429020215898598.tmp"/>
+    <property name="classworlds.conf" value="/home/jakobb/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf5544988808613729054.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -59,17 +59,17 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="test11BasicDecimals on test11BasicDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="3.547"/>
-  <testcase name="test10AdvancedInputZero on test10AdvancedInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.051"/>
-  <testcase name="test9BasicInputZero on test9BasicInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.988"/>
-  <testcase name="test7AdvancedAllNegative on test7AdvancedAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.094"/>
-  <testcase name="test3BasicAllNegative on test3BasicAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.8"/>
-  <testcase name="test12AdvancedDecimals on test12AdvancedDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.684"/>
-  <testcase name="test0BasicAllPositive on test0BasicAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.773"/>
-  <testcase name="test8AdvancedAdvFunctions on test8AdvancedAdvFunctions(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.283"/>
-  <testcase name="test2BasicSecondNegative on test2BasicSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.682"/>
-  <testcase name="test4AdvancedAllPositive on test4AdvancedAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.742"/>
-  <testcase name="test5AdvancedFirstNegative on test5AdvancedFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.842"/>
-  <testcase name="test1BasicFirstNegative on test1BasicFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.68"/>
-  <testcase name="test6AdvancedSecondNegative on test6AdvancedSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.577"/>
+  <testcase name="test11BasicDecimals on test11BasicDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="3.46"/>
+  <testcase name="test10AdvancedInputZero on test10AdvancedInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.302"/>
+  <testcase name="test9BasicInputZero on test9BasicInputZero(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.879"/>
+  <testcase name="test7AdvancedAllNegative on test7AdvancedAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.183"/>
+  <testcase name="test3BasicAllNegative on test3BasicAllNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.047"/>
+  <testcase name="test12AdvancedDecimals on test12AdvancedDecimals(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.749"/>
+  <testcase name="test0BasicAllPositive on test0BasicAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.849"/>
+  <testcase name="test8AdvancedAdvFunctions on test8AdvancedAdvFunctions(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="1.396"/>
+  <testcase name="test2BasicSecondNegative on test2BasicSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.986"/>
+  <testcase name="test4AdvancedAllPositive on test4AdvancedAllPositive(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.832"/>
+  <testcase name="test5AdvancedFirstNegative on test5AdvancedFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.897"/>
+  <testcase name="test1BasicFirstNegative on test1BasicFirstNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.667"/>
+  <testcase name="test6AdvancedSecondNegative on test6AdvancedSecondNegative(calculator_jakobbjork.calculator_jakobbjork.TestCalculator)" classname="calculator_jakobbjork.calculator_jakobbjork.TestCalculator" time="0.915"/>
 </testsuite>
